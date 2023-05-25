@@ -9,7 +9,7 @@ const HOURS_IN_DAY : float = 24.0
 const DAYS_IN_YEAR : int = 365
 
 # For simplify, a local time, I skip totally a longitude
-@export_range( 0.0, HOURS_IN_DAY, 0.01 ) var day_time : float = 0.0 :
+@export_range( 0.0, HOURS_IN_DAY, 0.0001 ) var day_time : float = 0.0 :
 	set( value ) :
 		day_time = value
 		_update()

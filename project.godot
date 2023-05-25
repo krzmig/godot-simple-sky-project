@@ -21,7 +21,7 @@ window/size/mode=4
 
 [editor]
 
-movie_writer/movie_file="/home/krzmig/Programowanie/Godot/Sky/movie/a.avi"
+movie_writer/movie_file="/home/krzmig/Programowanie/Godot/Sky/.movie/b.avi"
 
 [filesystem]
 
