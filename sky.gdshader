@@ -278,12 +278,12 @@ void sky()
 		_clouds_color = mix( _clouds_color, clouds_bottom_color, _noise_bottom );
 		// The edge color gives a nice smooth edge, you can try turning this off if you need sharper edges
 		_clouds_color = mix( clouds_edge_color, _clouds_color, _noise_top );
-		// Color depending on the "progress" of the night.
-		_clouds_color = mix( _clouds_color, _sky_color, clamp( _night_amount, 0.0, 0.98 ));
 		// The sun passing through the clouds effect
 		_clouds_color = mix( _clouds_color, clamp( sun_color, 0.0, 1.0 ), pow( 1.0 - clamp( _sun_distance, 0.0, 1.0 ), 5 ));
 		// Color combined with sunset condition
-		_clouds_color = mix( _clouds_color, sunset_bottom_color, _sunset_amount * 0.5 );
+		_clouds_color = mix( _clouds_color, sunset_bottom_color, _sunset_amount * 0.75 );
+		// Color depending on the "progress" of the night.
+		_clouds_color = mix( _clouds_color, _sky_color, clamp( _night_amount, 0.0, 0.98 ));
 		_clouds_color = mix( _clouds_color, vec3( 0.0 ), clouds_weight * 0.9 );
 		COLOR = mix( COLOR, _clouds_color, _clouds_amount );
 		//COLOR = mix( COLOR, _clouds_color, clamp( _clouds_amount + clouds_weight * ( 1.0 - clouds_cutoff ) * 0.75, 0.0, 1.0 ));

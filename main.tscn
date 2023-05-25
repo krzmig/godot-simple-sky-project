@@ -34,7 +34,7 @@ shader_parameter/clouds_weight = 0.0
 shader_parameter/clouds_blur = 0.25
 shader_parameter/stars_speed = 1.0
 shader_parameter/stars_texture = ExtResource("3_yetut")
-shader_parameter/overwritten_time = 489600.0
+shader_parameter/overwritten_time = 2400.0
 
 [sub_resource type="Sky" id="Sky_q13r3"]
 sky_material = SubResource("ShaderMaterial_msgkm")
@@ -160,7 +160,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:clouds_cutoff")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -168,11 +168,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 7, 8.5, 11, 12, 14, 18, 21, 22, 24),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.3, 0.3, 0.6, 0.05, 0.1, 0.3, 0.4, 0.2, 0.2, 0.4]
+"values": [0.3, 0.3, 0.6, 0.05, 0.1, 0.3, 0.4, 0.2, 0.2, 0.6]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath(".:clouds_weight")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -191,14 +191,13 @@ _data = {
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_awq8r")
-day_of_year = 204
 use_day_time_for_shader = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bh1jy")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.939856, 0, 0.341572, 0.341572, -4.37114e-08, -0.939855, 1.49306e-08, 1, -4.10824e-08, 0, 0, 0)
+transform = Transform3D(0.920627, 0, -0.390445, -0.390445, -4.37114e-08, -0.920626, -1.70669e-08, 1, -4.02418e-08, 0, 0, 0)
 rotation_order = 4
 light_energy = 0.0
 shadow_enabled = true
@@ -207,7 +206,7 @@ shadow_blur = 5.0
 sky_mode = 2
 
 [node name="Moon" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.995978, 0, 0.0895896, -0.0454816, -0.861553, 0.505624, 0.0771863, -0.507666, -0.858089, 0, 0, 0)
+transform = Transform3D(0.995978, 0, 0.0895896, 0.0189377, -0.977403, -0.210533, 0.0875651, 0.211383, -0.973473, 0, 0, 0)
 rotation_order = 4
 light_color = Color(1, 1, 0.6, 1)
 light_energy = 0.0
