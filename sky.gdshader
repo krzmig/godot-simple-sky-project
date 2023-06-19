@@ -286,6 +286,5 @@ void sky()
 		_clouds_color = mix( _clouds_color, _sky_color, clamp( _night_amount, 0.0, 0.98 ));
 		_clouds_color = mix( _clouds_color, vec3( 0.0 ), clouds_weight * 0.9 );
 		COLOR = mix( COLOR, _clouds_color, _clouds_amount );
-		//COLOR = mix( COLOR, _clouds_color, clamp( _clouds_amount + clouds_weight * ( 1.0 - clouds_cutoff ) * 0.75, 0.0, 1.0 ));
 	}
 }
