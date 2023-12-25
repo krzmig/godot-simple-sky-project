@@ -48,6 +48,8 @@ group_uniforms stars;
 	// Stars should be at black background
 	uniform sampler2D stars_texture : filter_linear_mipmap, hint_default_black;
 	uniform float stars_speed : hint_range( 0.0, 20.0, 0.01 ) = 1.0;
+	uniform float stars_scale : hint_range(0.1, 3.0, 0.01) = 1.0;
+	uniform float stars_opacity : hint_range(0.1, 1.0, 0.01) = 1.0;
 
 group_uniforms settings;
 	uniform float overwritten_time = 0.0;
@@ -239,12 +241,12 @@ void sky()
 		vec2 _stars_uv = vec2(
 			_sky_uv.x * _stars_speed_cos - _sky_uv.y * _stars_speed_sin,
 			_sky_uv.x * _stars_speed_sin + _sky_uv.y * _stars_speed_cos
-		);
+		) * stars_scale;
 		// Stars texture
 		vec3 _stars_color = texture( stars_texture, _stars_uv ).rgb * -LIGHT0_DIRECTION.y;
 		// Hiding stars behind the moon
 		_stars_color *= 1.0 - _moon_amount;
-		COLOR += _stars_color;
+		COLOR += _stars_color * stars_opacity;
 	}
 
 	//////////////////// CLOUDS ////////////////////////////////////////////////////////////////
